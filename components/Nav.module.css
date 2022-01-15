@@ -1,0 +1,14 @@
+.navbar {
+	background-color: #222;
+	padding: 1em 0;
+	color: white;
+	display: flex;
+	flex-direction: row-reverse;
+	position: sticky;
+	top: 5px;
+	z-index: 5;
+}
+
+.navbar>* {
+	padding-right: 1em;
+}
