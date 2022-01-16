@@ -1,0 +1,31 @@
+.container {
+	cursor: pointer;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	width: 85px;
+	margin: 0.3em 0;
+}
+
+.centered {
+	display: flex;
+	justify-content: center;
+}
+
+.icon {
+	vertical-align: middle;
+}
+
+.innerContainer {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.innerContainer:hover>svg>path {
+	fill: var(--blue);
+}
+
+.innerContainer:hover {
+	color: var(--blue);
+}

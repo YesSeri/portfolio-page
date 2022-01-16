@@ -90,6 +90,7 @@
 	max-width: 150px;
 	margin-top: 0.5em;
 	margin-bottom: 3.5em;
+	text-align: center;
 }
 
 .skillColumn:not(:nth-child(2)) {

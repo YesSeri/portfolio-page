@@ -60,11 +60,12 @@ const About = () => {
 							<Skill text={skills[3].text} pic={skills[3].pic}></Skill>
 							<Skill text={skills[4].text} pic={skills[4].pic}></Skill>
 							<Skill text={skills[5].text} pic={skills[5].pic}></Skill>
+							<Skill text={skills[6].text} pic={skills[6].pic}></Skill>
 						</div>
 						<div className={styles.skillColumn}>
-							<Skill text={skills[6].text} pic={skills[6].pic}></Skill>
 							<Skill text={skills[7].text} pic={skills[7].pic}></Skill>
 							<Skill text={skills[8].text} pic={skills[8].pic}></Skill>
+							<Skill text={skills[9].text} pic={skills[9].pic}></Skill>
 						</div>
 					</div>
 				</div>
@@ -107,8 +108,12 @@ const skills = [
 		pic: "/icons/express.svg",
 	},
 	{
+		text: "Styled Component",
+		pic: "/icons/styled-components.svg",
+	},
+	{
 		text: "React-Native",
 		pic: "/icons/react.svg",
-	}
+	},
 ]
 export default About

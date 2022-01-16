@@ -1,9 +1,10 @@
 :root {
 	--primary: #111;
 	--red: rgb(175, 40, 40);
+	--blue: #6c63ff;
 	--radial-gradient: radial-gradient(circle at top left, #2d0088, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
 	--gradient: linear-gradient(var(--primary), var(--primary)), var(--radial-gradient);
-	--max-width: 800px;
+	--max-width: 1200px;
 }
 
 html,

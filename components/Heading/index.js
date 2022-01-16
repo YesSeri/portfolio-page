@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './Heading.module.css'
 
 const Heading = ({ id, children }) => {
-	console.log({ id, children })
 	return (
 		<div style={{ display: 'flex' }}>
 			<div style={{ position: 'relative', margin: 'auto' }}>

@@ -1,28 +1,39 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
+import GitDemoLink from './GitDemoLink'
 import styles from './item.module.css'
 
-const Item = ({ name, description, techDescription, pic, style }) => {
-	console.log({ style })
-	console.log({ pic })
+const Item = ({ el }) => {
 	return (
-		<div className={styles.item} style={style}>
-			<div>
+		<div className={styles.item}>
+			<div className={styles.description}>
 				<h2>
-					{name}
+					{el.name}
 				</h2>
 				<p>
-					{description}
+					{el.description}
 				</p>
-				<p>
+				<GitDemoLink />
+				{/* <span className={["material-icons", styles.icon].join(" ")} style={{ verticalAlign: 'middle', marginBottom: 0 }}>computer</span> */}
+				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', width: '150px', margin: 'auto' }}>
+					{el.tech.map(({ label, link }) =>
+					(<div key={label} className={styles.tooltip}>
+						<span className={styles.tooltiptext}>
+							{label}
+						</span>
+						<Image src={link} alt={label} width={50} height={50}></Image>
+					</div>
+					))}
+				</div>
+				{/* <p>
 					{techDescription}
-				</p>
+				</p> */}
 			</div>
 			<div className={styles.image}>
 				{/* <img src={"." + pic} alt={name}></img> */}
-				<Image src={pic} alt={name} width={300} height={300} ></Image>
+				<Image src={el.pic} alt={el.name} width={300} height={300} ></Image>
 			</div>
-		</div>
+		</div >
 	)
 }
 
