@@ -1,7 +1,8 @@
+import Image from 'next/image'
 import React, { useEffect, useState, useRef } from 'react'
 import styles from './About.module.css'
-// import Skill from './About/Skill'
-import useOnScreen from './useOnScreen'
+import Skill from './About/Skill'
+import useOnScreen, { useAddClassOnVisible } from './useOnScreen'
 // useEffect(() => {
 // 	if (!mounted.current) {
 // 		mounted.current = true;
@@ -21,32 +22,36 @@ import useOnScreen from './useOnScreen'
 
 
 const About = () => {
+	// const leftPaneRef = useRef()
+	// const leftVisible = useOnScreen(leftPaneRef)
+	// const leftMounted = useRef(false)
+	// const [leftClass, setLeftClass] = useState([styles.pane, styles.leftPane])
+	// useEffect(() => {
+	// 	if (!leftMounted.current) {
+	// 		leftMounted.current = true;
+	// 	} else {
+	// 		if (leftVisible) {
+	// 			setTimeout(() => {
+	// 				setLeftClass(c => [...c, styles.slideInLeft]);
+	// 			}, 1000);
+	// 		}
+	// 	}
+	// }, [leftVisible])
+	// useAddClassOnVisible adds the 2nd param to the 3rd param arr when the ref comes into view. 
 	const leftPaneRef = useRef()
-	const leftVisible = useOnScreen(leftPaneRef)
-	const leftMounted = useRef(false)
-	const [leftClass, setLeftClass] = useState([styles.pane, styles.leftPane])
-	useEffect(() => {
-		if (!leftMounted.current) {
-			leftMounted.current = true;
-		} else {
-			if (leftVisible) {
-				setTimeout(() => {
-					setLeftClass(c => [...c, styles.slideInLeft]);
-				}, 1000);
-			}
-		}
-	}, [leftVisible])
+	const leftClasses = useAddClassOnVisible(leftPaneRef, styles.slideInLeft, [styles.leftPane])
+	const rightPaneRef = useRef()
+	const rightClasses = useAddClassOnVisible(rightPaneRef, styles.slideInRight, [styles.pane, styles.rightPane])
 	return (
 		<div>
-			<h1 id='about'>About</h1>
-			<section>
-				<div ref={leftPaneRef} >
-					<div className={leftClass.join(" ")} >Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna mauris, facilisis vitae quam vitae, rutrum tincidunt est. Nulla tempus enim nec eros consectetur imperdiet. Duis faucibus metus sit amet elementum scelerisque. Sed rhoncus nisl non dolor convallis, et efficitur eros pellentesque. In bibendum sit amet nisi eu posuere. Vivamus consequat tellus vitae dui fermentum iaculis. Quisque id orci at metus porttitor auctor.
+			<section className={styles.section}>
+				<div ref={leftPaneRef} className={[styles.leftContainer, styles.pane].join(" ")}>
+					<div className={leftClasses.join(" ")}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna mauris, facilisis vitae quam vitae, rutrum tincidunt est. Nulla tempus enim nec eros consectetur imperdiet. Duis faucibus metus sit amet elementum scelerisque. Sed rhoncus nisl non dolor convallis, et efficitur eros pellentesque. In bibendum sit amet nisi eu posuere. Vivamus consequat tellus vitae dui fermentum iaculis. Quisque id orci at metus porttitor auctor.
 					</div>
 				</div>
-				{/* <div className={classesRightPane.join(" ")}>
-					<div red={rightPaneRef}>
-						<div className={styles.skillColumn} style={{ marginTop: '3em', marginRight: '1em' }}>
+				<div ref={rightPaneRef}>
+					<div className={rightClasses.join(" ")}>
+						<div className={styles.skillColumn} >
 							<Skill text={skills[0].text} pic={skills[0].pic}></Skill>
 							<Skill text={skills[1].text} pic={skills[1].pic}></Skill>
 							<Skill text={skills[2].text} pic={skills[2].pic}></Skill>
@@ -56,13 +61,13 @@ const About = () => {
 							<Skill text={skills[4].text} pic={skills[4].pic}></Skill>
 							<Skill text={skills[5].text} pic={skills[5].pic}></Skill>
 						</div>
-						<div className={styles.skillColumn} style={{ marginTop: '3em', marginLeft: '1em' }}>
+						<div className={styles.skillColumn}>
 							<Skill text={skills[6].text} pic={skills[6].pic}></Skill>
 							<Skill text={skills[7].text} pic={skills[7].pic}></Skill>
 							<Skill text={skills[8].text} pic={skills[8].pic}></Skill>
 						</div>
 					</div>
-				</div> */}
+				</div>
 			</section>
 		</div>
 	)

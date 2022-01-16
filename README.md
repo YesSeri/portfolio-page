@@ -7,3 +7,10 @@ Henrik Zenkert
 3. List of projects
 	- Pic to one side, heading, small info text plus links to the right
 4. Contact
+
+### Projects
+- Operadocs
+- Chordipro
+- Piano
+- Gestures
+- TicTacToe multiplayer

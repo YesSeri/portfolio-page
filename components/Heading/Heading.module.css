@@ -1,0 +1,9 @@
+.heading:after {
+	position: absolute;
+	content: '';
+	bottom: 25px;
+	left: 30px;
+	width: 4em;
+	border-bottom: solid 0.5em var(--red);
+	z-index: -5;
+}

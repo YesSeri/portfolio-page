@@ -1,7 +1,9 @@
 :root {
 	--primary: #111;
-	--gradient: linear-gradient(150deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
-	--gradient-2: linear-gradient(var(--primary), var(--primary)), radial-gradient(circle at top left, #2d0088, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
+	--red: rgb(175, 40, 40);
+	--radial-gradient: radial-gradient(circle at top left, #2d0088, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb56b);
+	--gradient: linear-gradient(var(--primary), var(--primary)), var(--radial-gradient);
+	--max-width: 800px;
 }
 
 html,
@@ -23,6 +25,8 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+
+
 
 * {
 	box-sizing: border-box;

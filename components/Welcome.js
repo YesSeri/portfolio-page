@@ -6,7 +6,7 @@ const Welcome = () => {
 		<div style={{ position: 'relative' }}>
 			<div><Canvas /></div>
 			<div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', pointerEvents: 'none' }}>
-				<h1 style={{ color: 'white' }}>Henrik Zenkert Portfolio Page</h1>
+				<div style={{ fontSize: '3em' }}>Henrik Zenkert Portfolio Page</div>
 			</div>
 
 		</div>

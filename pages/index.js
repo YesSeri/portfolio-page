@@ -4,6 +4,8 @@ import Welcome from '../components/Welcome'
 import CanvasNoLines from '../components/CanvasNoLines'
 import About from '../components/About'
 import Contact from '../components/Contact'
+import Projects from '../components/Projects'
+import Heading from '../components/Heading'
 export default function Home() {
 	return (
 		<div>
@@ -16,58 +18,11 @@ export default function Home() {
 			<Nav></Nav>
 			<CanvasNoLines />
 			<div style={{ textAlign: 'center' }}>
-				<h1 id='projects'>Projects</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
-				<h1 id='contact'>Contact</h1>
+				<Heading id='about'>About</Heading>
 				<About></About>
+				<Heading id='projects'>Projects</Heading>
+				<Projects></Projects>
+				<Heading id='contact'>Contact</Heading>
 				<Contact></Contact>
 			</div>
 		</div>
