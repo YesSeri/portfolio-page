@@ -22,15 +22,7 @@
 	}
 }
 
-@keyframes scale-up {
-	0% {
-		transform: scale(1, 1);
-	}
 
-	100% {
-		transform: scale(1.15, 1.15);
-	}
-}
 
 .leftContainer {
 	display: flex;
@@ -41,7 +33,7 @@
 }
 
 .leftContainer:hover {
-	transform: scale(1.15, 1.15);
+	transform: scale(1.05, 1.05);
 }
 
 .section {
@@ -109,6 +101,11 @@
 	.section {
 		flex-direction: column;
 	}
+
+	.leftContainer:hover {
+		transform: scale(1.02, 1.02);
+	}
+
 
 	.pane {
 		text-align: justify;

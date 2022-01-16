@@ -10,8 +10,8 @@ class Dot {
 		this.x;
 		this.y;
 		if (random) {
-			this.y = getRandomInt(x);
 			this.x = getRandomInt(x);
+			this.y = getRandomInt(y);
 		} else {
 			this.y = y;
 			this.x = x;
@@ -27,6 +27,21 @@ class Dot {
 // 1. Get input.
 // 2. Update. Update position of dots.
 // 3. Render.
+
+function getOptions(width, height) {
+	const dotCalc = width * height / 1800
+	const distance = 70; // How far dots will link.
+	const mouseLinkRadius = 150; // Within this radius of the mouse linking will occur.
+	let dots;
+	if (dotCalc > 550) {
+		dots = 550
+	} else if (dotCalc < 150) {
+		dots = 150;
+	} else {
+		dots = dotCalc;
+	}
+	return { dots, distance, mouseLinkRadius }
+}
 const CanvasNoLines = props => {
 	const canvasRef = useRef(null)
 	useEffect(() => {
@@ -34,6 +49,7 @@ const CanvasNoLines = props => {
 		const ctx = canvas.getContext('2d')
 		canvas.width = document.body.scrollWidth;
 		canvas.height = window.innerHeight;
+		let options = getOptions(canvas.width, canvas.height);
 		ctx.fillStyle = "#ddd";
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 		let frameCount = 0;
@@ -42,6 +58,15 @@ const CanvasNoLines = props => {
 
 		canvas.addEventListener('mousemove', getMousePos);
 		canvas.addEventListener('click', handleClick);
+		window.addEventListener('resize', function () {
+			clearTimeout(window.resizedFinished);
+			window.resizedFinished = setTimeout(function () {
+				canvas.width = window.innerWidth
+				canvas.height = window.innerHeight
+				options = getOptions(canvas.width, canvas.height);
+				dots = generateDots(options);
+			}, 250);
+		});
 		function handleClick() {
 			for (let i = 0; i < 2; i++) {
 				dots.push(new Dot(mousePos.x, mousePos.y, false));
@@ -49,7 +74,7 @@ const CanvasNoLines = props => {
 		}
 		const generateDots = () => {
 			let arr = [];
-			for (let i = 0; i < 150; i++) {
+			for (let i = 0; i < options.dots; i++) {
 				arr.push(new Dot(canvas.width, canvas.height));
 			}
 			return arr;

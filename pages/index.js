@@ -14,7 +14,7 @@ export default function Home() {
 				<meta name="description" content="A portfolio page for Henrik Zenkert" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			{/* <Welcome /> */}
+			<Welcome />
 			<Nav></Nav>
 			<CanvasNoLines />
 			<div style={{ textAlign: 'center' }}>

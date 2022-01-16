@@ -1,3 +1,23 @@
-.item:hover {
-	transform: scale(1.25, 1.25);
+.item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #111d;
+	margin-bottom: 1em;
 }
+
+.item:nth-child(even) {
+	flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 800px) {
+	.item {
+		flex-direction: column !important;
+		border-bottom: solid 1px var(--red);
+		margin-bottom: 2em;
+	}
+}
+
+/* .item:hover { */
+/* transform: scale(1.25, 1.25); */
+/* } */
