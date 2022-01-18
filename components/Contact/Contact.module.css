@@ -3,26 +3,75 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	margin: auto;
+	max-width: 600px;
+	margin-bottom: 0.3em;
 }
 
 .textarea {
 	width: 100%;
-	max-width: 600px;
 }
 
 .innerContainer {
 	display: flex;
 	width: 100%;
-	max-width: 600px;
 }
 
 .innerContainer>* {
 	flex: 1;
 }
 
+.innerContainer>input, .container>textarea {
+	border: none;
+	background-color: var(--secondary);
+	color: #ddd;
+	padding: 1em;
+	margin-bottom: 0.5em;
+}
+
+.buttonContainer {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 100%;
+}
+
+.buttonContainer>button {
+	font-size: 1.2rem;
+	font-weight: 700;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.6rem 1rem;
+	position: relative;
+	cursor: pointer;
+
+}
+
+.buttonContainer>button::after {
+	position: absolute;
+	content: '';
+	height: 2px;
+	background-color: var(--red);
+	width: 100%;
+	bottom: 1px;
+	transform-origin: bottom;
+	transition: all 0.25s;
+	z-index: -1;
+}
+
+.buttonContainer>button:hover {
+	color: black;
+}
+
+.buttonContainer>button:hover::after {
+	height: 100%;
+}
+
+
 @media screen and (max-width: 800px) {
 	.innerContainer {
 		flex-direction: column;
 	}
-
 }

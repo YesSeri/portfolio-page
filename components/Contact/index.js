@@ -8,12 +8,14 @@ const Contact = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.innerContainer}>
-				<label htmlFor='email'>Email</label>
-				<input id="email" type="text"></input>
-				<label htmlFor='name'>Name</label>
-				<input id="name" type="text"></input>
+				<input placeholder='Email' id="email" name='email' type="text"></input>
+				<input placeholder='Name' id="name" name='name' type="text"></input>
 			</div>
-			<textarea className={styles.textarea}></textarea>
+			<textarea rows={5} cols={10} placeholder='Message' style={{ fontFamily: 'Poppins' }} className={styles.textarea}></textarea>
+			<div className={styles.buttonContainer}>
+
+				<button>Submit</button>
+			</div>
 		</div>
 	)
 }

@@ -23,6 +23,13 @@ class Dot {
 		this.color = Math.random() < 0.9 ? `#${colorInt}ad${int}` : `#f44${int}`
 	}
 }
+function debounce(func) {
+	var timer;
+	return function (event) {
+		if (timer) clearTimeout(timer);
+		timer = setTimeout(func, 200, event);
+	};
+}
 // This should be like a game loop. 
 // 1. Get input.
 // 2. Update. Update position of dots.
@@ -31,18 +38,37 @@ class Dot {
 
 // Recieves width and height and return number of dots, and how far the lines are from the mouse.
 function getOptions(width, height) {
-	const dotCalc = width * height / 1800
-	const distance = 70; // How far dots will link.
-	const mouseLinkRadius = 150; // Within this radius of the mouse linking will occur.
-	let dots;
-	if (dotCalc > 550) {
-		dots = 550
-	} else if (dotCalc < 150) {
-		dots = 150;
+	if (width > 1500) {
+		return {
+			dots: 550,
+			distance: 90,
+			mouseLinkRadius: 220
+		}
+	} else if (width > 1100) {
+		return {
+			dots: 400,
+			distance: 80,
+			mouseLinkRadius: 180
+		}
+	} else if (width > 900) {
+		return {
+			dots: 350,
+			distance: 75,
+			mouseLinkRadius: 130
+		}
+	} else if (width > 650) {
+		return {
+			dots: 300,
+			distance: 70,
+			mouseLinkRadius: 150
+		}
 	} else {
-		dots = dotCalc;
+		return {
+			dots: 230,
+			distance: 65,
+			mouseLinkRadius: 130
+		}
 	}
-	return { dots, distance, mouseLinkRadius }
 }
 const Canvas = props => {
 	const canvasRef = useRef(null)
@@ -60,16 +86,18 @@ const Canvas = props => {
 
 		canvas.addEventListener('mousemove', getMousePos);
 		canvas.addEventListener('click', handleClick);
-		window.addEventListener('resize', function () {
-			clearTimeout(window.resizedFinished);
-			window.resizedFinished = setTimeout(function () {
-				canvas.width = window.innerWidth
-				canvas.height = window.innerHeight
-				options = getOptions(canvas.width, canvas.height);
-				dots = generateDots(options);
-			}, 250);
-		});
+		// Debounce is used to not spam the resize event, but only do it after no new resize event has occured for a small time. 
+		window.addEventListener('resize', debounce(function () {
+			canvas.width = window.innerWidth
+			canvas.height = window.innerHeight
+			options = getOptions(canvas.width, canvas.height);
+			console.log(options)
+			dots = generateDots(options);
+		}));
 		function handleClick() {
+			if (!mousePos) {
+				return
+			}
 			for (let i = 0; i < 2; i++) {
 				dots.push(new Dot(mousePos.x, mousePos.y, false));
 			}
@@ -100,7 +128,6 @@ const Canvas = props => {
 
 		function generateLines(dots) {
 			const distance = 70; // How far dots will link.
-			const mouseLinkRadius = 150; // Within this radius of the mouse linking will occur.
 			// let temp = []
 			if (mousePos === null) return
 
@@ -117,10 +144,10 @@ const Canvas = props => {
 					) {
 
 						if (
-							firstDot.x - mousePos.x < mouseLinkRadius &&
-							firstDot.y - mousePos.y < mouseLinkRadius &&
-							firstDot.x - mousePos.x > -mouseLinkRadius &&
-							firstDot.y - mousePos.y > -mouseLinkRadius
+							firstDot.x - mousePos.x < options.mouseLinkRadius &&
+							firstDot.y - mousePos.y < options.mouseLinkRadius &&
+							firstDot.x - mousePos.x > -options.mouseLinkRadius &&
+							firstDot.y - mousePos.y > -options.mouseLinkRadius
 						) {
 							ctx.beginPath();
 							ctx.moveTo(firstDot.x, firstDot.y);
@@ -132,7 +159,7 @@ const Canvas = props => {
 								((firstDot.x - mousePos.x) ** 2 +
 									(firstDot.y - mousePos.y) ** 2) **
 								0.5;
-							let distanceRatio = dotDistance / mouseLinkRadius;
+							let distanceRatio = dotDistance / options.mouseLinkRadius;
 
 							// make it so it doesnt fade out completely
 							distanceRatio -= 0.3;

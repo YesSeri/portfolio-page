@@ -6,6 +6,7 @@ import About from '../components/About'
 import Contact from '../components/Contact'
 import Projects from '../components/Projects'
 import Heading from '../components/Heading'
+import Footer from '../components/Footer'
 export default function Home() {
 	return (
 		<div>
@@ -24,6 +25,7 @@ export default function Home() {
 				<Projects></Projects>
 				<Heading id='contact'>Contact</Heading>
 				<Contact></Contact>
+				<Footer></Footer>
 			</div>
 		</div>
 	)

@@ -16,18 +16,15 @@ const Item = ({ el }) => {
 				<GitDemoLink />
 				{/* <span className={["material-icons", styles.icon].join(" ")} style={{ verticalAlign: 'middle', marginBottom: 0 }}>computer</span> */}
 				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', width: '150px', margin: 'auto' }}>
-					{el.tech.map(({ label, link }) =>
-					(<div key={label} className={styles.tooltip}>
-						<span className={styles.tooltiptext}>
-							{label}
-						</span>
-						<Image src={link} alt={label} width={50} height={50}></Image>
-					</div>
-					))}
+					{el.tech.map(({ name, link }) => {
+						return (<div key={name} className={styles.tooltip}>
+							<span className={styles.tooltiptext}>
+								{name}
+							</span>
+							<Image src={link} alt={name} width={50} height={50}></Image>
+						</div>)
+					})}
 				</div>
-				{/* <p>
-					{techDescription}
-				</p> */}
 			</div>
 			<div className={styles.image}>
 				{/* <img src={"." + pic} alt={name}></img> */}

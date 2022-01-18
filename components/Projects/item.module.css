@@ -6,26 +6,24 @@
 	margin-bottom: 1em;
 }
 
+.item>* {
+	flex: 1;
+	padding: 0 1em;
+}
+
 .item:nth-child(even) {
 	flex-direction: row-reverse;
 }
 
-
-.description {
-	max-width: 300px;
-	padding: 0 3em;
-}
-
-.image {
-	padding: 0 3em;
-}
-
 @media screen and (max-width: 800px) {
 	.item {
-		flex-direction: column;
 		border-bottom: solid 1px var(--red);
 		margin-bottom: 2em;
 		background: #111b;
+	}
+
+	.item:nth-child(even), .item {
+		flex-direction: column;
 	}
 
 	.description {
@@ -59,7 +57,7 @@
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltiptext, .tooltip:active .tooltiptext {
 	visibility: visible;
 }
 
