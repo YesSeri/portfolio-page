@@ -2,18 +2,33 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #111d;
 	margin-bottom: 1em;
 }
 
 .item>* {
 	flex: 1;
 	padding: 0 1em;
+	max-width: 400px;
 }
 
 .item:nth-child(even) {
 	flex-direction: row-reverse;
 }
+
+.description {
+	background-color: var(--blue);
+	border-radius: 25px;
+	box-shadow: 1px 1px 3px var(--primary) inset;
+	transition: all 0.3s;
+}
+
+.description:hover {
+	transform: scale(0.97, 0.97);
+}
+
+.image {}
+
+.image:hover {}
 
 @media screen and (max-width: 800px) {
 	.item {
@@ -27,9 +42,9 @@
 	}
 
 	.description {
-		max-width: 500px;
-
+		width: 100%;
 	}
+
 }
 
 .tooltip {
@@ -37,6 +52,7 @@
 	/* display: inline-block; */
 	/* border-bottom: 1px dotted black; */
 	/* If you want dots under the hoverable text */
+
 }
 
 /* Tooltip text */

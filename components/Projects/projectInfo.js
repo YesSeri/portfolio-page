@@ -4,7 +4,7 @@ const projectsArr = [
 		pic: "/projects/undraw_operadocs.svg",
 		description: 'Find free opera scores online.',
 		// techDescription: "Next JS, Styled Components, Node JS and MYSQL.",
-		githubLink: "",
+		githubLink: "https://github.com/YesSeri/opera-docs",
 		link: "",
 		tech: [
 			{ name: "React", link: "/icons/react.svg" },
@@ -18,7 +18,7 @@ const projectsArr = [
 		pic: "/projects/undraw_react_native.svg",
 		description: "A tool for creating songs with chords, and then displaying them.",
 		// techDescription: "Created with React Native app. ",
-		githubLink: "",
+		githubLink: "https://github.com/YesSeri/chordipro-react-native",
 		link: "",
 		tech: [
 			{ name: "React Native", link: "/icons/react.svg" },
@@ -30,7 +30,7 @@ const projectsArr = [
 		pic: "/projects/undraw_pianisto.svg",
 		description: "An online piano. Useable with keyboard, mouse or touch.",
 		techDescription: "Written in Svelte JS, together with the Tone JS library.",
-		githubLink: "",
+		githubLink: "https://github.com/YesSeri/svelte-piano",
 		link: "",
 		tech: [
 			{ name: "HTML", link: "/icons/html.svg" },

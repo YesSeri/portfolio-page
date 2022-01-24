@@ -8,8 +8,8 @@ const Contact = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.innerContainer}>
-				<input placeholder='Email' id="email" name='email' type="text"></input>
-				<input placeholder='Name' id="name" name='name' type="text"></input>
+				<input className={styles.email} placeholder='Email' id="email" name='email' type="text"></input>
+				<input className={styles.name} placeholder='Name' id="name" name='name' type="text"></input>
 			</div>
 			<textarea rows={5} cols={10} placeholder='Message' style={{ fontFamily: 'Poppins' }} className={styles.textarea}></textarea>
 			<div className={styles.buttonContainer}>

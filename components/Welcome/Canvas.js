@@ -24,7 +24,7 @@ class Dot {
 	}
 }
 function debounce(func) {
-	var timer;
+	let timer;
 	return function (event) {
 		if (timer) clearTimeout(timer);
 		timer = setTimeout(func, 200, event);
@@ -37,7 +37,7 @@ function debounce(func) {
 
 
 // Recieves width and height and return number of dots, and how far the lines are from the mouse.
-function getOptions(width, height) {
+function getOptions(width) {
 	if (width > 1500) {
 		return {
 			dots: 550,
@@ -91,7 +91,6 @@ const Canvas = props => {
 			canvas.width = window.innerWidth
 			canvas.height = window.innerHeight
 			options = getOptions(canvas.width, canvas.height);
-			console.log(options)
 			dots = generateDots(options);
 		}));
 		function handleClick() {

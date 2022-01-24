@@ -21,11 +21,3 @@
 	display: flex;
 	justify-content: space-between;
 }
-
-.innerContainer:hover>svg>path, .innerContainer:active>svg>path {
-	fill: var(--blue);
-}
-
-.innerContainer:hover, .innerContainer:active {
-	color: var(--blue);
-}

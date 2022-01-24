@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 import GitDemoLink from './GitDemoLink'
 import styles from './item.module.css'
 
@@ -13,8 +13,7 @@ const Item = ({ el }) => {
 				<p>
 					{el.description}
 				</p>
-				<GitDemoLink />
-				{/* <span className={["material-icons", styles.icon].join(" ")} style={{ verticalAlign: 'middle', marginBottom: 0 }}>computer</span> */}
+				<GitDemoLink githubLink={el.githubLink} codeLink={el.codeLink} />
 				<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', width: '150px', margin: 'auto' }}>
 					{el.tech.map(({ name, link }) => {
 						return (<div key={name} className={styles.tooltip}>

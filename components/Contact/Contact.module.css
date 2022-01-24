@@ -17,11 +17,17 @@
 	width: 100%;
 }
 
-.innerContainer>* {
-	flex: 1;
+.email {
+	margin-right: 0.3em;
 }
 
-.innerContainer>input, .container>textarea {
+.name {
+	margin-left: 0.3em;
+}
+
+
+.email, .name, .textarea {
+	flex: 1;
 	border: none;
 	background-color: var(--secondary);
 	color: #ddd;
@@ -57,7 +63,7 @@
 	width: 100%;
 	bottom: 1px;
 	transform-origin: bottom;
-	transition: all 0.25s;
+	transition: all 0.35s;
 	z-index: -1;
 }
 
@@ -73,5 +79,9 @@
 @media screen and (max-width: 800px) {
 	.innerContainer {
 		flex-direction: column;
+	}
+
+	.innerContainer:nth-child(1) {
+		margin-right: 0.3em;
 	}
 }
