@@ -21,3 +21,15 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+.link:hover {
+	transform: scale(1.15, 1.15);
+}
+
+.link {
+	transition: all 0.3s;
+}
+
+.icon {
+	fill: white;
+}

@@ -1,5 +1,28 @@
 .container {
+	display: grid;
+	background-color: var(--secondary);
 	height: 150px;
 	width: 100%;
-	background-color: var(--secondary);
+}
+
+.iconsContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.iconsContainer>* {
+	margin: 0 10px;
+}
+
+
+.name {
+	font-size: 0.9em;
+	font-weight: lighter;
+}
+
+.textContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
