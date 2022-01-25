@@ -9,7 +9,7 @@ const projectsArr = [
 		tech: [
 			{ name: "React", link: "/icons/react.svg" },
 			{ name: 'Node JS', link: '/icons/node.svg' },
-			{ name: "MYSQL", link: '/icons/mysql.svg' }
+			{ name: "MYSQL", link: '/icons/mysql-white.svg' }
 		]
 	},
 	// { name: 'RubyChess', pic: "/projects/undraw_react_native.svg", description: "", techDescription: "", },
@@ -22,7 +22,7 @@ const projectsArr = [
 		link: "",
 		tech: [
 			{ name: "React Native", link: "/icons/react.svg" },
-			{ name: "MYSQL", link: '/icons/mysql.svg' }
+			{ name: "MYSQL", link: '/icons/mysql-white.svg' }
 		]
 	},
 	{

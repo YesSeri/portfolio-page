@@ -77,6 +77,14 @@
 
 
 @media screen and (max-width: 800px) {
+	.email {
+		margin-right: 0;
+	}
+
+	.name {
+		margin-left: 0;
+	}
+
 	.innerContainer {
 		flex-direction: column;
 	}
