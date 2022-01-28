@@ -1,24 +1,23 @@
 .container {
 	display: grid;
 	background-color: var(--secondary);
-	height: 150px;
+	height: 100px;
 	width: 100%;
 }
 
 .iconsContainer {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
 }
-
-.iconsContainer>* {
-	margin: 0 10px;
-}
-
 
 .name {
 	font-size: 0.9em;
 	font-weight: lighter;
+}
+
+.iconsContainer>* {
+	margin: 0 10px;
 }
 
 .textContainer {

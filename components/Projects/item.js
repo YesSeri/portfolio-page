@@ -20,12 +20,14 @@ const Item = ({ el }) => {
 							<span className={styles.tooltiptext}>
 								{name}
 							</span>
-							<Image src={link} alt={name} width={50} height={50}></Image>
+							<div className={styles.image} >
+								<Image src={link} alt={name} width={50} height={50}></Image>
+							</div>
 						</div>)
 					})}
 				</div>
 			</div>
-			<div className={styles.image}>
+			<div>
 				{/* <img src={"." + pic} alt={name}></img> */}
 				<Image src={el.pic} alt={el.name} width={300} height={300} ></Image>
 			</div>
